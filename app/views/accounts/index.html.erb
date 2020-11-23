@@ -1,2 +1,24 @@
-<h1>Accounts#index</h1>
-<p>Find me in app/views/accounts/index.html.erb</p>
+<h1>Welcome <%=current_user.first_name%> </h1>
+<hr />
+<p><%=link_to "add account", new_account_path, class: "waves-effect waves-light btn"%></p>
+
+
+<h3>Your accounts</h3>
+<div class="row">
+<% @accounts.each do |account| %>
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%=account.name%></span>
+          <p><%=account.balance%></p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  <%end%>
+  </div>
+
+            
